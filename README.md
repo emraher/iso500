@@ -10,16 +10,16 @@
 experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
 <!-- badges: end -->
 
-The goal of iso500 is to download data for Turkey’s Top 500 Industrial
-Enterprises.
+The goal of `iso500` is to download data for **Turkey’s Top 500
+Industrial Enterprises**.
 
 ## Installation
 
-You can install iso500 from [Github](https://github.com/emraher/iso500)
-with:
+You can install `iso500` from
+[Github](https://github.com/emraher/iso500) with:
 
 ``` r
-remotes::install_github("iso500")
+remotes::install_github("emraher/iso500")
 ```
 
 ## Example
@@ -126,3 +126,10 @@ dt %>%
 #> $ `Capital Share (Publicity)`                              <dbl> 0.00, 0.00, 0.00, 0.00, 0.00, …
 #> $ `Web Site`                                               <chr> "www.tupras.com.tr", "www.tupr…
 ```
+
+## Code of Conduct
+
+Please note that the iso500 project is released with a [Contributor Code
+of
+Conduct](https://contributor-covenant.org/version/2/0/CODE_OF_CONDUCT.html).
+By contributing to this project, you agree to abide by its terms.

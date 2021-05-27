@@ -4,9 +4,9 @@
 \name{iso500-package}
 \alias{iso500}
 \alias{iso500-package}
-\title{iso500: What the Package Does (One Line, Title Case)}
+\title{iso500: Download data from iso500.org.tr}
 \description{
-What the package does (one paragraph).
+Download data from iso500.org.tr.
 }
 \seealso{
 Useful links:
@@ -17,7 +17,7 @@ Useful links:
 
 }
 \author{
-\strong{Maintainer}: First Last \email{first.last@example.com} (\href{https://orcid.org/YOUR-ORCID-ID}{ORCID})
+\strong{Maintainer}: Emrah Er \email{eer@eremrah.com}
 
 }
 \keyword{internal}

@@ -16,6 +16,9 @@ knitr::opts_chunk$set(
 # iso500
 
 <!-- badges: start -->
+[![Codecov test coverage](https://codecov.io/gh/emraher/iso500/branch/main/graph/badge.svg)](https://codecov.io/gh/emraher/iso500?branch=main)
+[![R-CMD-check](https://github.com/emraher/iso500/workflows/R-CMD-check/badge.svg)](https://github.com/emraher/iso500/actions)
+[![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
 <!-- badges: end -->
 
 The goal of iso500 is to ...

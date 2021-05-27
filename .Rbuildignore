@@ -1,9 +1,11 @@
-^iso500\.Rproj$
+^tuik\.Rproj$
 ^\.Rproj\.user$
-^LICENSE\.md$
-^README\.Rmd$
 ^\.github$
 ^codecov\.yml$
 ^_pkgdown\.yml$
 ^docs$
 ^pkgdown$
+^README\.Rmd$
+^CODE_OF_CONDUCT\.md$
+^LICENSE\.md$
+^README_cache$

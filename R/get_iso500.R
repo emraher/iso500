@@ -29,7 +29,8 @@ get_iso500 <- function(year, all = FALSE) {
     dt <- readxl::read_xlsx(temp, na = "-") %>%
       dplyr::mutate(dplyr::across(c(1:3, 6:38), ~ stringr::str_remove_all(.x, "\\."))) %>%
       dplyr::mutate(dplyr::across(c(1:3, 6:38), ~ stringr::str_replace_all(.x, "\\,", "\\."))) %>%
-      dplyr::mutate(dplyr::across(c(1:3, 6:38), as.numeric))
+      dplyr::mutate(dplyr::across(c(1:3, 6:38), as.numeric)) %>%
+      dplyr::rename(CurrentYear_Ranking = 2, PreviousYear_Ranking = 3)
 
     if (!isTRUE(all)) {
       dt <- dt %>%

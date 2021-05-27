@@ -5,14 +5,14 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>What the Package Does (One Line, Title Case) • iso500</title>
+<title>Download data from iso500.org.tr • iso500</title>
 <!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script><!-- Bootstrap --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha256-bZLfwXAP04zRMK2BjiO8iu9pf4FbLqX6zitd+tIvLhE=" crossorigin="anonymous">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script><!-- bootstrap-toc --><link rel="stylesheet" href="bootstrap-toc.css">
 <script src="bootstrap-toc.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
 <!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="pkgdown.css" rel="stylesheet">
-<script src="pkgdown.js"></script><meta property="og:title" content="What the Package Does (One Line, Title Case)">
-<meta property="og:description" content="What the package does (one paragraph).">
+<script src="pkgdown.js"></script><meta property="og:title" content="Download data from iso500.org.tr">
+<meta property="og:description" content="Download data from iso500.org.tr.">
 <!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
@@ -66,7 +66,130 @@
 
       </header><div class="row">
   <div class="contents col-md-9">
-What the package does (one paragraph).
+
+<hr>
+<div id="output-github_document" class="section level2">
+<h2 class="hasAnchor">
+<a href="#output-github_document" class="anchor"></a>output: github_document</h2>
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+</div>
+<div id="iso500" class="section level1">
+<div class="page-header"><h1 class="hasAnchor">
+<a href="#iso500" class="anchor"></a>iso500</h1></div>
+<!-- badges: start -->
+
+<p>The goal of iso500 is to download data for Turkey’s Top 500 Industrial Enterprises.</p>
+<div id="installation" class="section level2">
+<h2 class="hasAnchor">
+<a href="#installation" class="anchor"></a>Installation</h2>
+<p>You can install iso500 from <a href="https://github.com/emraher/iso500">Github</a> with:</p>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu">remotes</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"iso500"</span><span class="op">)</span></code></pre></div>
+</div>
+<div id="example" class="section level2">
+<h2 class="hasAnchor">
+<a href="#example" class="anchor"></a>Example</h2>
+<p>There’s only one function in the package, <code><a href="reference/get_iso500.html">get_iso500(year, all = FALSE)</a></code>. You can use this function to download data.</p>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://magrittr.tidyverse.org">magrittr</a></span><span class="op">)</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/emraher/iso500">iso500</a></span><span class="op">)</span>
+
+<span class="co"># Following code will download 2018 data.</span>
+<span class="va">dt</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/get_iso500.html">get_iso500</a></span><span class="op">(</span><span class="fl">2018</span><span class="op">)</span>
+
+<span class="va">dt</span> <span class="op">%&gt;%</span> 
+  <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://pillar.r-lib.org/reference/glimpse.html">glimpse</a></span><span class="op">(</span><span class="op">)</span>
+<span class="co">#&gt; Rows: 500</span>
+<span class="co">#&gt; Columns: 39</span>
+<span class="co">#&gt; $ Year                                                     &lt;dbl&gt; 2018, 2018, 20…</span>
+<span class="co">#&gt; $ `Top 500 Rank 1999 - Ranking No`                         &lt;dbl&gt; 1, 2, 3, 4, 5,…</span>
+<span class="co">#&gt; $ `Top 500 Rank 1998 - Ranking No`                         &lt;dbl&gt; 1, 2, 3, 5, 4,…</span>
+<span class="co">#&gt; $ Enterprises                                              &lt;chr&gt; "TÜPRAŞ-Türkiy…</span>
+<span class="co">#&gt; $ `Affiliated Chamber / Public`                            &lt;chr&gt; "Kocaeli Chamb…</span>
+<span class="co">#&gt; $ `Ranking - Public`                                       &lt;dbl&gt; NA, NA, NA, NA…</span>
+<span class="co">#&gt; $ `Ranking - Private`                                      &lt;dbl&gt; 1, 2, 3, 4, 5,…</span>
+<span class="co">#&gt; $ `Production Based Sales (Net) (TL)`                      &lt;dbl&gt; 79042478682, 3…</span>
+<span class="co">#&gt; $ `Net Sales - General Ranking No`                         &lt;dbl&gt; 1, 2, 3, 5, 6,…</span>
+<span class="co">#&gt; $ `Net Sales - Public/Private Ranking No`                  &lt;dbl&gt; 1, 2, 3, 5, 6,…</span>
+<span class="co">#&gt; $ `Net Sales (TL)`                                         &lt;dbl&gt; 89093033486, 3…</span>
+<span class="co">#&gt; $ `Gross Value Added - General Ranking No`                 &lt;dbl&gt; 1, 5, NA, NA, …</span>
+<span class="co">#&gt; $ `Gross Value Added - Public/Private Ranking No`          &lt;dbl&gt; 1, 5, NA, NA, …</span>
+<span class="co">#&gt; $ `Gross Value Added (TL)`                                 &lt;dbl&gt; 37391464943, 4…</span>
+<span class="co">#&gt; $ `Equity - General Ranking No`                            &lt;dbl&gt; 6, 25, NA, NA,…</span>
+<span class="co">#&gt; $ `Equity - Public/Private Ranking No`                     &lt;dbl&gt; 4, 22, NA, NA,…</span>
+<span class="co">#&gt; $ `Equity (TL)`                                            &lt;dbl&gt; 6262005861, 19…</span>
+<span class="co">#&gt; $ `Total Assets - General Ranking No`                      &lt;dbl&gt; 1, 12, NA, NA,…</span>
+<span class="co">#&gt; $ `Total Assets - Public/Private Ranking No`               &lt;dbl&gt; 1, 10, NA, NA,…</span>
+<span class="co">#&gt; $ `Total Assets (TL)`                                      &lt;dbl&gt; 35066775689, 1…</span>
+<span class="co">#&gt; $ `Profit/Loss for the Period - General Ranking No`        &lt;dbl&gt; 4, 10, NA, NA,…</span>
+<span class="co">#&gt; $ `Profit/Loss for the Period - Public/Private Ranking No` &lt;dbl&gt; 3, 8, NA, NA, …</span>
+<span class="co">#&gt; $ `Profit/Loss for the Period (TL)`                        &lt;dbl&gt; 3911187643, 12…</span>
+<span class="co">#&gt; $ `EBITDA - General Ranking No`                            &lt;dbl&gt; 1, 4, NA, NA, …</span>
+<span class="co">#&gt; $ `EBITDA - Public/Private Ranking No`                     &lt;dbl&gt; 1, 4, NA, NA, …</span>
+<span class="co">#&gt; $ `EBITDA (TL)`                                            &lt;dbl&gt; 8447049290, 30…</span>
+<span class="co">#&gt; $ `Exports - General Ranking No`                           &lt;dbl&gt; 5, 1, 2, 3, 4,…</span>
+<span class="co">#&gt; $ `Exports - Public/Private Ranking No`                    &lt;dbl&gt; 5, 1, 2, 3, 4,…</span>
+<span class="co">#&gt; $ `Exports (Thousand $)`                                   &lt;dbl&gt; 2469739, 56827…</span>
+<span class="co">#&gt; $ `Number of Employees - General Ranking No`               &lt;dbl&gt; 25, 3, NA, 9, …</span>
+<span class="co">#&gt; $ `Number of Employees - Public/Private Ranking No`        &lt;dbl&gt; 21, 3, NA, 9, …</span>
+<span class="co">#&gt; $ `Number of Employees (Person)`                           &lt;dbl&gt; 4935, 10967, N…</span>
+<span class="co">#&gt; $ `Economic Activity Code - NACE Rev.2`                    &lt;dbl&gt; 19, 29, 29, 29…</span>
+<span class="co">#&gt; $ `Economic Activity Code - ISIC Rev.2`                    &lt;dbl&gt; 353, 384, 384,…</span>
+<span class="co">#&gt; $ `Capital Share (Public)`                                 &lt;dbl&gt; 0.00, 0.00, 0.…</span>
+<span class="co">#&gt; $ `Capital Share (Private)`                                &lt;dbl&gt; 51.00, 41.07, …</span>
+<span class="co">#&gt; $ `Capital Share (Foreign)`                                &lt;dbl&gt; 0.00, 41.04, 1…</span>
+<span class="co">#&gt; $ `Capital Share (Publicity)`                              &lt;dbl&gt; 49.00, 17.89, …</span>
+<span class="co">#&gt; $ `Web Site`                                               &lt;chr&gt; "www.tupras.co…</span>
+
+<span class="co"># Following code will download all available data.</span>
+<span class="va">dt</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/get_iso500.html">get_iso500</a></span><span class="op">(</span><span class="fl">2018</span>, all <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>
+
+<span class="va">dt</span> <span class="op">%&gt;%</span> 
+  <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://pillar.r-lib.org/reference/glimpse.html">glimpse</a></span><span class="op">(</span><span class="op">)</span>
+<span class="co">#&gt; Rows: 7,500</span>
+<span class="co">#&gt; Columns: 39</span>
+<span class="co">#&gt; $ Year                                                     &lt;dbl&gt; 2009, 2007, 20…</span>
+<span class="co">#&gt; $ `Top 500 Rank 1999 - Ranking No`                         &lt;dbl&gt; 1, 1, 1, 1, 1,…</span>
+<span class="co">#&gt; $ `Top 500 Rank 1998 - Ranking No`                         &lt;dbl&gt; 1, 1, 1, 1, 1,…</span>
+<span class="co">#&gt; $ Enterprises                                              &lt;chr&gt; "TÜPRAŞ-Türkiy…</span>
+<span class="co">#&gt; $ `Affiliated Chamber / Public`                            &lt;chr&gt; "Kocaeli Chamb…</span>
+<span class="co">#&gt; $ `Ranking - Public`                                       &lt;dbl&gt; NA, NA, NA, NA…</span>
+<span class="co">#&gt; $ `Ranking - Private`                                      &lt;dbl&gt; 1, 1, 1, 1, 1,…</span>
+<span class="co">#&gt; $ `Production Based Sales (Net) (TL)`                      &lt;dbl&gt; 15495595133, 1…</span>
+<span class="co">#&gt; $ `Net Sales - General Ranking No`                         &lt;dbl&gt; 1, 1, 1, 1, 1,…</span>
+<span class="co">#&gt; $ `Net Sales - Public/Private Ranking No`                  &lt;dbl&gt; 1, 1, 1, 1, 1,…</span>
+<span class="co">#&gt; $ `Net Sales (TL)`                                         &lt;dbl&gt; 18215446534, 2…</span>
+<span class="co">#&gt; $ `Gross Value Added - General Ranking No`                 &lt;dbl&gt; 1, 1, 1, 1, 1,…</span>
+<span class="co">#&gt; $ `Gross Value Added - Public/Private Ranking No`          &lt;dbl&gt; 1, 1, 1, 1, 1,…</span>
+<span class="co">#&gt; $ `Gross Value Added (TL)`                                 &lt;dbl&gt; 17257587409, 1…</span>
+<span class="co">#&gt; $ `Equity - General Ranking No`                            &lt;dbl&gt; 4, 3, 3, 4, 4,…</span>
+<span class="co">#&gt; $ `Equity - Public/Private Ranking No`                     &lt;dbl&gt; 2, 2, 2, 2, 2,…</span>
+<span class="co">#&gt; $ `Equity (TL)`                                            &lt;dbl&gt; 2772952504, 33…</span>
+<span class="co">#&gt; $ `Total Assets - General Ranking No`                      &lt;dbl&gt; 2, 2, 3, 2, 2,…</span>
+<span class="co">#&gt; $ `Total Assets - Public/Private Ranking No`               &lt;dbl&gt; 1, 1, 2, 1, 1,…</span>
+<span class="co">#&gt; $ `Total Assets (TL)`                                      &lt;dbl&gt; 8333665892, 77…</span>
+<span class="co">#&gt; $ `Profit/Loss for the Period - General Ranking No`        &lt;dbl&gt; 2, 1, 1, 3, 3,…</span>
+<span class="co">#&gt; $ `Profit/Loss for the Period - Public/Private Ranking No` &lt;dbl&gt; 1, 1, 1, 1, 1,…</span>
+<span class="co">#&gt; $ `Profit/Loss for the Period (TL)`                        &lt;dbl&gt; 776931357, 125…</span>
+<span class="co">#&gt; $ `EBITDA - General Ranking No`                            &lt;dbl&gt; NA, NA, NA, NA…</span>
+<span class="co">#&gt; $ `EBITDA - Public/Private Ranking No`                     &lt;dbl&gt; NA, NA, NA, NA…</span>
+<span class="co">#&gt; $ `EBITDA (TL)`                                            &lt;dbl&gt; NA, NA, NA, NA…</span>
+<span class="co">#&gt; $ `Exports - General Ranking No`                           &lt;dbl&gt; 4, 2, 1, 2, 1,…</span>
+<span class="co">#&gt; $ `Exports - Public/Private Ranking No`                    &lt;dbl&gt; 4, 2, 1, 2, 1,…</span>
+<span class="co">#&gt; $ `Exports (Thousand $)`                                   &lt;dbl&gt; 1751582, 33800…</span>
+<span class="co">#&gt; $ `Number of Employees - General Ranking No`               &lt;dbl&gt; 18, 19, 14, 22…</span>
+<span class="co">#&gt; $ `Number of Employees - Public/Private Ranking No`        &lt;dbl&gt; 11, 12, 9, 15,…</span>
+<span class="co">#&gt; $ `Number of Employees (Person)`                           &lt;dbl&gt; 4155, 4451, 46…</span>
+<span class="co">#&gt; $ `Economic Activity Code - NACE Rev.2`                    &lt;dbl&gt; NA, NA, NA, NA…</span>
+<span class="co">#&gt; $ `Economic Activity Code - ISIC Rev.2`                    &lt;dbl&gt; 353, 353, 353,…</span>
+<span class="co">#&gt; $ `Capital Share (Public)`                                 &lt;dbl&gt; 0, 0, 0, 0, 0,…</span>
+<span class="co">#&gt; $ `Capital Share (Private)`                                &lt;dbl&gt; 100.00, 100.00…</span>
+<span class="co">#&gt; $ `Capital Share (Foreign)`                                &lt;dbl&gt; 0.00, 0.00, 0.…</span>
+<span class="co">#&gt; $ `Capital Share (Publicity)`                              &lt;dbl&gt; 0.00, 0.00, 0.…</span>
+<span class="co">#&gt; $ `Web Site`                                               &lt;chr&gt; "www.tupras.co…</span></code></pre></div>
+</div>
+</div>
+
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
@@ -89,16 +212,23 @@ What the package does (one paragraph).
 <div class="developers">
 <h2>Developers</h2>
 <ul class="list-unstyled">
-<li>First Last <br><small class="roles"> Author, maintainer </small> <a href="https://orcid.org/YOUR-ORCID-ID" target="orcid.widget" aria-label="ORCID"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a> </li>
+<li>Emrah Er <br><small class="roles"> Author, maintainer </small>  </li>
 </ul>
 </div>
 
-  </div>
+  <div class="dev-status">
+<h2>Dev status</h2>
+<ul class="list-unstyled">
+<li><a href="https://github.com/emraher/iso500/actions"><img src="https://github.com/emraher/iso500/workflows/R-CMD-check/badge.svg" alt="R-CMD-check"></a></li>
+<li><a href="https://lifecycle.r-lib.org/articles/stages.html#experimental"><img src="https://img.shields.io/badge/lifecycle-experimental-orange.svg" alt="Lifecycle: experimental"></a></li>
+</ul>
+</div>
+</div>
 </div>
 
 
       <footer><div class="copyright">
-  <p>Developed by First Last.</p>
+  <p>Developed by Emrah Er.</p>
 </div>
 
 <div class="pkgdown">

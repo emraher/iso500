@@ -19,6 +19,8 @@
 <![endif]-->
 </head>
 <body data-spy="scroll" data-target="#toc">
+    
+
     <div class="container template-home">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -31,25 +33,19 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">iso500</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.0.9000</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.0.1</span>
       </span>
     </div>
 
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
 <li>
-  <a href="index.html">
-    <span class="fas fa-home fa-lg"></span>
-     
-  </a>
-</li>
-<li>
   <a href="reference/index.html">Reference</a>
 </li>
       </ul>
 <ul class="nav navbar-nav navbar-right">
 <li>
-  <a href="https://github.com/emraher/iso500/">
+  <a href="https://github.com/emraher/iso500/" class="external-link">
     <span class="fab fa-github fa-lg"></span>
      
   </a>
@@ -66,177 +62,114 @@
 
       </header><div class="row">
   <div class="contents col-md-9">
-<div id="iso500" class="section level1">
-<div class="page-header"><h1 class="hasAnchor">
-<a href="#iso500" class="anchor"></a>iso500</h1></div>
+<div class="section level1">
+<div class="page-header"><h1 id="iso500">iso500<a class="anchor" aria-label="anchor" href="#iso500"></a>
+</h1></div>
 <!-- badges: start -->
-
 <p>The goal of <code>iso500</code> is to download data for <strong>Turkey’s Top 500 Industrial Enterprises</strong>.</p>
-<div id="installation" class="section level2">
-<h2 class="hasAnchor">
-<a href="#installation" class="anchor"></a>Installation</h2>
-<p>You can install <code>iso500</code> from <a href="https://github.com/emraher/iso500">Github</a> with:</p>
+<div class="section level2">
+<h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
+</h2>
+<p>You can install <code>iso500</code> from <a href="https://github.com/emraher/iso500" class="external-link">Github</a> with:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu">remotes</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"emraher/iso500"</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu">remotes</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"emraher/iso500"</span><span class="op">)</span></span></code></pre></div>
 </div>
-<div id="example" class="section level2">
-<h2 class="hasAnchor">
-<a href="#example" class="anchor"></a>Example</h2>
-<p>There’s only one function in the package, <code><a href="reference/get_iso500.html">get_iso500(year, all = FALSE)</a></code>. You can use this function to download data.</p>
+<div class="section level2">
+<h2 id="example">Example<a class="anchor" aria-label="anchor" href="#example"></a>
+</h2>
+<p>There’s only one function in the package, <code>get_iso500(year)</code>. You can use this function to download data.</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://magrittr.tidyverse.org">magrittr</a></span><span class="op">)</span>
-<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/emraher/iso500">iso500</a></span><span class="op">)</span>
-
-<span class="co"># Following code will download 2018 data.</span>
-<span class="va">dt</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/get_iso500.html">get_iso500</a></span><span class="op">(</span><span class="fl">2018</span><span class="op">)</span>
-
-<span class="va">dt</span> <span class="op">%&gt;%</span> 
-  <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://pillar.r-lib.org/reference/glimpse.html">glimpse</a></span><span class="op">(</span><span class="op">)</span>
-<span class="co">#&gt; Rows: 500</span>
-<span class="co">#&gt; Columns: 39</span>
-<span class="co">#&gt; $ Year                                                     &lt;dbl&gt; 2018, 2018, 2018, 2018, 2018, …</span>
-<span class="co">#&gt; $ `Top 500 Rank 1999 - Ranking No`                         &lt;dbl&gt; 1, 2, 3, 4, 5, 6, 7, 8, 9, 10,…</span>
-<span class="co">#&gt; $ `Top 500 Rank 1998 - Ranking No`                         &lt;dbl&gt; 1, 2, 3, 5, 4, 6, 7, 8, 9, 10,…</span>
-<span class="co">#&gt; $ Enterprises                                              &lt;chr&gt; "TÜPRAŞ-Türkiye Petrol Rafiner…</span>
-<span class="co">#&gt; $ `Affiliated Chamber / Public`                            &lt;chr&gt; "Kocaeli Chamber of Industry",…</span>
-<span class="co">#&gt; $ `Ranking - Public`                                       &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA…</span>
-<span class="co">#&gt; $ `Ranking - Private`                                      &lt;dbl&gt; 1, 2, 3, 4, 5, 6, 7, 8, 9, 10,…</span>
-<span class="co">#&gt; $ `Production Based Sales (Net) (TL)`                      &lt;dbl&gt; 79042478682, 31062845187, 2360…</span>
-<span class="co">#&gt; $ `Net Sales - General Ranking No`                         &lt;dbl&gt; 1, 2, 3, 5, 6, 7, 8, 4, 12, 10…</span>
-<span class="co">#&gt; $ `Net Sales - Public/Private Ranking No`                  &lt;dbl&gt; 1, 2, 3, 5, 6, 7, 8, 4, 11, 9,…</span>
-<span class="co">#&gt; $ `Net Sales (TL)`                                         &lt;dbl&gt; 89093033486, 33611763475, 2377…</span>
-<span class="co">#&gt; $ `Gross Value Added - General Ranking No`                 &lt;dbl&gt; 1, 5, NA, NA, 9, 15, 4, 13, 24…</span>
-<span class="co">#&gt; $ `Gross Value Added - Public/Private Ranking No`          &lt;dbl&gt; 1, 5, NA, NA, 9, 14, 4, 12, 22…</span>
-<span class="co">#&gt; $ `Gross Value Added (TL)`                                 &lt;dbl&gt; 37391464943, 4416974135, NA, N…</span>
-<span class="co">#&gt; $ `Equity - General Ranking No`                            &lt;dbl&gt; 6, 25, NA, NA, 30, 14, 4, 3, 2…</span>
-<span class="co">#&gt; $ `Equity - Public/Private Ranking No`                     &lt;dbl&gt; 4, 22, NA, NA, 26, 11, 2, 1, 2…</span>
-<span class="co">#&gt; $ `Equity (TL)`                                            &lt;dbl&gt; 6262005861, 1971623317, NA, NA…</span>
-<span class="co">#&gt; $ `Total Assets - General Ranking No`                      &lt;dbl&gt; 1, 12, NA, NA, 14, 7, 8, 4, 45…</span>
-<span class="co">#&gt; $ `Total Assets - Public/Private Ranking No`               &lt;dbl&gt; 1, 10, NA, NA, 12, 5, 6, 2, 41…</span>
-<span class="co">#&gt; $ `Total Assets (TL)`                                      &lt;dbl&gt; 35066775689, 10739995271, NA, …</span>
-<span class="co">#&gt; $ `Profit/Loss for the Period - General Ranking No`        &lt;dbl&gt; 4, 10, NA, NA, 16, 11, 1, 2, 2…</span>
-<span class="co">#&gt; $ `Profit/Loss for the Period - Public/Private Ranking No` &lt;dbl&gt; 3, 8, NA, NA, 14, 9, 1, 2, 26,…</span>
-<span class="co">#&gt; $ `Profit/Loss for the Period (TL)`                        &lt;dbl&gt; 3911187643, 1215005555, NA, NA…</span>
-<span class="co">#&gt; $ `EBITDA - General Ranking No`                            &lt;dbl&gt; 1, 4, NA, NA, 6, 10, 2, 3, 18,…</span>
-<span class="co">#&gt; $ `EBITDA - Public/Private Ranking No`                     &lt;dbl&gt; 1, 4, NA, NA, 5, 9, 2, 3, 17, …</span>
-<span class="co">#&gt; $ `EBITDA (TL)`                                            &lt;dbl&gt; 8447049290, 3080327111, NA, NA…</span>
-<span class="co">#&gt; $ `Exports - General Ranking No`                           &lt;dbl&gt; 5, 1, 2, 3, 4, 6, 18, 31, 10, …</span>
-<span class="co">#&gt; $ `Exports - Public/Private Ranking No`                    &lt;dbl&gt; 5, 1, 2, 3, 4, 6, 17, 30, 10, …</span>
-<span class="co">#&gt; $ `Exports (Thousand $)`                                   &lt;dbl&gt; 2469739, 5682762, 4325047, 336…</span>
-<span class="co">#&gt; $ `Number of Employees - General Ranking No`               &lt;dbl&gt; 25, 3, NA, 9, 4, 1, 26, 15, 27…</span>
-<span class="co">#&gt; $ `Number of Employees - Public/Private Ranking No`        &lt;dbl&gt; 21, 3, NA, 9, 4, 1, 22, 13, 23…</span>
-<span class="co">#&gt; $ `Number of Employees (Person)`                           &lt;dbl&gt; 4935, 10967, NA, 7270, 8818, 1…</span>
-<span class="co">#&gt; $ `Economic Activity Code - NACE Rev.2`                    &lt;dbl&gt; 19, 29, 29, 29, 29, 27, 24, 24…</span>
-<span class="co">#&gt; $ `Economic Activity Code - ISIC Rev.2`                    &lt;dbl&gt; 353, 384, 384, 384, 384, 383, …</span>
-<span class="co">#&gt; $ `Capital Share (Public)`                                 &lt;dbl&gt; 0.00, 0.00, 0.00, 0.00, 0.00, …</span>
-<span class="co">#&gt; $ `Capital Share (Private)`                                &lt;dbl&gt; 51.00, 41.07, 0.00, 49.00, 37.…</span>
-<span class="co">#&gt; $ `Capital Share (Foreign)`                                &lt;dbl&gt; 0.00, 41.04, 100.00, 51.00, 37…</span>
-<span class="co">#&gt; $ `Capital Share (Publicity)`                              &lt;dbl&gt; 49.00, 17.89, 0.00, 0.00, 24.2…</span>
-<span class="co">#&gt; $ `Web Site`                                               &lt;chr&gt; "www.tupras.com.tr", "www.ford…</span>
-
-<span class="co"># Following code will download all available data.</span>
-<span class="va">dt</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/get_iso500.html">get_iso500</a></span><span class="op">(</span><span class="fl">2018</span>, all <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>
-
-<span class="va">dt</span> <span class="op">%&gt;%</span> 
-  <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://pillar.r-lib.org/reference/glimpse.html">glimpse</a></span><span class="op">(</span><span class="op">)</span>
-<span class="co">#&gt; Rows: 7,500</span>
-<span class="co">#&gt; Columns: 39</span>
-<span class="co">#&gt; $ Year                                                     &lt;dbl&gt; 2009, 2007, 2006, 2010, 2011, …</span>
-<span class="co">#&gt; $ `Top 500 Rank 1999 - Ranking No`                         &lt;dbl&gt; 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, …</span>
-<span class="co">#&gt; $ `Top 500 Rank 1998 - Ranking No`                         &lt;dbl&gt; 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, …</span>
-<span class="co">#&gt; $ Enterprises                                              &lt;chr&gt; "TÜPRAŞ-Türkiye Petrol Rafiner…</span>
-<span class="co">#&gt; $ `Affiliated Chamber / Public`                            &lt;chr&gt; "Kocaeli Chamber of Industry",…</span>
-<span class="co">#&gt; $ `Ranking - Public`                                       &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA…</span>
-<span class="co">#&gt; $ `Ranking - Private`                                      &lt;dbl&gt; 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, …</span>
-<span class="co">#&gt; $ `Production Based Sales (Net) (TL)`                      &lt;dbl&gt; 15495595133, 18450708799, 1867…</span>
-<span class="co">#&gt; $ `Net Sales - General Ranking No`                         &lt;dbl&gt; 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, …</span>
-<span class="co">#&gt; $ `Net Sales - Public/Private Ranking No`                  &lt;dbl&gt; 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, …</span>
-<span class="co">#&gt; $ `Net Sales (TL)`                                         &lt;dbl&gt; 18215446534, 20595892067, 2018…</span>
-<span class="co">#&gt; $ `Gross Value Added - General Ranking No`                 &lt;dbl&gt; 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, …</span>
-<span class="co">#&gt; $ `Gross Value Added - Public/Private Ranking No`          &lt;dbl&gt; 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, …</span>
-<span class="co">#&gt; $ `Gross Value Added (TL)`                                 &lt;dbl&gt; 17257587409, 15666720425, 1390…</span>
-<span class="co">#&gt; $ `Equity - General Ranking No`                            &lt;dbl&gt; 4, 3, 3, 4, 4, 5, 8, 7, 11, 8,…</span>
-<span class="co">#&gt; $ `Equity - Public/Private Ranking No`                     &lt;dbl&gt; 2, 2, 2, 2, 2, 3, 6, 5, 7, 5, …</span>
-<span class="co">#&gt; $ `Equity (TL)`                                            &lt;dbl&gt; 2772952504, 3337268648, 298680…</span>
-<span class="co">#&gt; $ `Total Assets - General Ranking No`                      &lt;dbl&gt; 2, 2, 3, 2, 2, 3, 1, 1, 2, 2, …</span>
-<span class="co">#&gt; $ `Total Assets - Public/Private Ranking No`               &lt;dbl&gt; 1, 1, 2, 1, 1, 2, 1, 1, 1, 1, …</span>
-<span class="co">#&gt; $ `Total Assets (TL)`                                      &lt;dbl&gt; 8333665892, 7751274458, 605400…</span>
-<span class="co">#&gt; $ `Profit/Loss for the Period - General Ranking No`        &lt;dbl&gt; 2, 1, 1, 3, 3, 4, 3, 1, 487, 1…</span>
-<span class="co">#&gt; $ `Profit/Loss for the Period - Public/Private Ranking No` &lt;dbl&gt; 1, 1, 1, 1, 1, 3, 1, 1, 480, 1…</span>
-<span class="co">#&gt; $ `Profit/Loss for the Period (TL)`                        &lt;dbl&gt; 776931357, 1252197224, 8847359…</span>
-<span class="co">#&gt; $ `EBITDA - General Ranking No`                            &lt;dbl&gt; NA, NA, NA, NA, NA, NA, 2, 1, …</span>
-<span class="co">#&gt; $ `EBITDA - Public/Private Ranking No`                     &lt;dbl&gt; NA, NA, NA, NA, NA, NA, 1, 1, …</span>
-<span class="co">#&gt; $ `EBITDA (TL)`                                            &lt;dbl&gt; NA, NA, NA, NA, NA, NA, 347766…</span>
-<span class="co">#&gt; $ `Exports - General Ranking No`                           &lt;dbl&gt; 4, 2, 1, 2, 1, 1, 5, 2, 1, 1, …</span>
-<span class="co">#&gt; $ `Exports - Public/Private Ranking No`                    &lt;dbl&gt; 4, 2, 1, 2, 1, 1, 5, 2, 1, 1, …</span>
-<span class="co">#&gt; $ `Exports (Thousand $)`                                   &lt;dbl&gt; 1751582, 3380072, 3044360, 284…</span>
-<span class="co">#&gt; $ `Number of Employees - General Ranking No`               &lt;dbl&gt; 18, 19, 14, 22, 23, 19, 24, 25…</span>
-<span class="co">#&gt; $ `Number of Employees - Public/Private Ranking No`        &lt;dbl&gt; 11, 12, 9, 15, 16, 12, 19, 19,…</span>
-<span class="co">#&gt; $ `Number of Employees (Person)`                           &lt;dbl&gt; 4155, 4451, 4682, 4160, 4160, …</span>
-<span class="co">#&gt; $ `Economic Activity Code - NACE Rev.2`                    &lt;dbl&gt; NA, NA, NA, NA, NA, NA, 19, 19…</span>
-<span class="co">#&gt; $ `Economic Activity Code - ISIC Rev.2`                    &lt;dbl&gt; 353, 353, 353, 353, 353, 353, …</span>
-<span class="co">#&gt; $ `Capital Share (Public)`                                 &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …</span>
-<span class="co">#&gt; $ `Capital Share (Private)`                                &lt;dbl&gt; 100.00, 100.00, 100.00, 100.00…</span>
-<span class="co">#&gt; $ `Capital Share (Foreign)`                                &lt;dbl&gt; 0.00, 0.00, 0.00, 0.00, 0.00, …</span>
-<span class="co">#&gt; $ `Capital Share (Publicity)`                              &lt;dbl&gt; 0.00, 0.00, 0.00, 0.00, 0.00, …</span>
-<span class="co">#&gt; $ `Web Site`                                               &lt;chr&gt; "www.tupras.com.tr", "www.tupr…</span></code></pre></div>
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://magrittr.tidyverse.org" class="external-link">magrittr</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/emraher/iso500" class="external-link">iso500</a></span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Following code will download 2018 data.</span></span>
+<span><span class="va">iso500_data</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/get_iso500.html">get_iso500</a></span><span class="op">(</span><span class="fl">2018</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">iso500_data</span><span class="op">)</span></span>
+<span><span class="co">#&gt; # A tibble: 6 × 107</span></span>
+<span><span class="co">#&gt;         Id Unvan    Yil Birin…¹ Serma…² Serma…³ Serma…⁴ Serma…⁵ NACEId NACE  NACEKod ISICId ISIC </span></span>
+<span><span class="co">#&gt;      &lt;int&gt; &lt;chr&gt;  &lt;int&gt;   &lt;int&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt;  &lt;chr&gt;</span></span>
+<span><span class="co">#&gt; 1 20181001 TÜPRA…  2018       1       0    51       0      49   19     Kok … "19   … 353    Petr…</span></span>
+<span><span class="co">#&gt; 2 20181002 Ford …  2018       1       0    41.1    41.0    17.9 29     Moto… "29   … 384    Taşı…</span></span>
+<span><span class="co">#&gt; 3 20181003 Toyot…  2018       1       0     0     100       0   29     Moto… "29   … 384    Taşı…</span></span>
+<span><span class="co">#&gt; 4 20181004 Oyak-…  2018       1       0    49      51       0   29     Moto… "29   … 384    Taşı…</span></span>
+<span><span class="co">#&gt; 5 20181005 Tofaş…  2018       1       0    37.8    37.9    24.3 29     Moto… "29   … 384    Taşı…</span></span>
+<span><span class="co">#&gt; 6 20181006 Arçel…  2018       1       0    74.8     0      25.2 27     Elek… "27   … 383    Elek…</span></span>
+<span><span class="co">#&gt; # … with 94 more variables: ISICKod &lt;chr&gt;, FirmaId &lt;int&gt;, EskiTicaretSicilNo &lt;int&gt;,</span></span>
+<span><span class="co">#&gt; #   WebAdresi &lt;chr&gt;, AktifMi &lt;lgl&gt;, SilindiMi &lt;lgl&gt;, UretimdenSatislar &lt;dbl&gt;,</span></span>
+<span><span class="co">#&gt; #   AciklamaDurumuUretimdenSatislar &lt;lgl&gt;, AciklamaDurumuUretimdenSatislarOnceki &lt;lgl&gt;,</span></span>
+<span><span class="co">#&gt; #   UretimdenSatislarGSNo &lt;int&gt;, UretimdenSatislarGSNoOnceki &lt;int&gt;,</span></span>
+<span><span class="co">#&gt; #   UretimdenSatislarKOSNo &lt;int&gt;, UretimdenSatislarKOSNoOnceki &lt;int&gt;,</span></span>
+<span><span class="co">#&gt; #   UretimdenSatislarSiraNoString &lt;chr&gt;, UretimdenSatislarSiraNoStringSolSira &lt;chr&gt;,</span></span>
+<span><span class="co">#&gt; #   UretimdenSatislarKamuOzelSiraNoString &lt;chr&gt;, NetSatislar &lt;dbl&gt;, …</span></span></code></pre></div>
 </div>
-<div id="code-of-conduct" class="section level2">
-<h2 class="hasAnchor">
-<a href="#code-of-conduct" class="anchor"></a>Code of Conduct</h2>
-<p>Please note that the iso500 project is released with a <a href="https://contributor-covenant.org/version/2/0/CODE_OF_CONDUCT.html">Contributor Code of Conduct</a>. By contributing to this project, you agree to abide by its terms.</p>
+<div class="section level2">
+<h2 id="code-of-conduct">Code of Conduct<a class="anchor" aria-label="anchor" href="#code-of-conduct"></a>
+</h2>
+<p>Please note that the iso500 project is released with a <a href="https://contributor-covenant.org/version/2/0/CODE_OF_CONDUCT.html" class="external-link">Contributor Code of Conduct</a>. By contributing to this project, you agree to abide by its terms.</p>
 </div>
 </div>
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <div class="links">
-<h2>Links</h2>
+<h2 data-toc-skip>Links</h2>
 <ul class="list-unstyled">
-<li>Browse source code at <br><a href="https://github.com/emraher/iso500/">https://​github.com/​emraher/​iso500/​</a>
-</li>
-<li>Report a bug at <br><a href="https://github.com/emraher/iso500/issues">https://​github.com/​emraher/​iso500/​issues</a>
-</li>
+<li><a href="https://github.com/emraher/iso500/" class="external-link">Browse source code</a></li>
+<li><a href="https://github.com/emraher/iso500/issues" class="external-link">Report a bug</a></li>
 </ul>
 </div>
+
 <div class="license">
-<h2>License</h2>
+<h2 data-toc-skip>License</h2>
 <ul class="list-unstyled">
 <li><a href="LICENSE.html">Full license</a></li>
-<li><small><a href="https://opensource.org/licenses/mit-license.php">MIT</a> + file <a href="LICENSE-text.html">LICENSE</a></small></li>
+<li><small><a href="https://opensource.org/licenses/mit-license.php" class="external-link">MIT</a> + file <a href="LICENSE-text.html">LICENSE</a></small></li>
 </ul>
 </div>
+
 <div class="community">
-<h2>Community</h2>
+<h2 data-toc-skip>Community</h2>
 <ul class="list-unstyled">
 <li><a href="CONTRIBUTING.html">Contributing guide</a></li>
 <li><a href="CODE_OF_CONDUCT.html">Code of conduct</a></li>
 </ul>
 </div>
+
+<div class="citation">
+<h2 data-toc-skip>Citation</h2>
+<ul class="list-unstyled">
+<li><a href="authors.html#citation">Citing iso500</a></li>
+</ul>
+</div>
+
 <div class="developers">
-<h2>Developers</h2>
+<h2 data-toc-skip>Developers</h2>
 <ul class="list-unstyled">
 <li>Emrah Er <br><small class="roles"> Author, maintainer </small>  </li>
 </ul>
 </div>
 
-  <div class="dev-status">
-<h2>Dev status</h2>
+<div class="dev-status">
+<h2 data-toc-skip>Dev status</h2>
 <ul class="list-unstyled">
-<li><a href="https://github.com/emraher/iso500/actions"><img src="https://github.com/emraher/iso500/workflows/R-CMD-check/badge.svg" alt="R-CMD-check"></a></li>
-<li><a href="https://lifecycle.r-lib.org/articles/stages.html#experimental"><img src="https://img.shields.io/badge/lifecycle-experimental-orange.svg" alt="Lifecycle: experimental"></a></li>
+<li><a href="https://github.com/emraher/iso500/actions" class="external-link"><img src="https://github.com/emraher/iso500/workflows/R-CMD-check/badge.svg" alt="R-CMD-check"></a></li>
+<li><a href="https://lifecycle.r-lib.org/articles/stages.html#experimental" class="external-link"><img src="https://img.shields.io/badge/lifecycle-experimental-orange.svg" alt="Lifecycle: experimental"></a></li>
 </ul>
 </div>
-</div>
+
+  </div>
 </div>
 
 
       <footer><div class="copyright">
-  <p>Developed by Emrah Er.</p>
+  <p></p>
+<p>Developed by Emrah Er.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
+  <p></p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.7.</p>
 </div>
 
       </footer>
@@ -244,6 +177,8 @@
 
   
 
+
+  
 
   </body>
 </html>

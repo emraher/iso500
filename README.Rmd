@@ -36,23 +36,17 @@ remotes::install_github("emraher/iso500")
 
 ## Example
 
-There's only one function in the package, `get_iso500(year, all = FALSE)`. You can use this function to download data.
+There's only one function in the package, `get_iso500(year)`. You can use this function to download data.
 
 ```{r example}
 library(magrittr)
 library(iso500)
 
 # Following code will download 2018 data.
-dt <- get_iso500(2018)
+iso500_data <- get_iso500(2018)
 
-dt %>% 
-  dplyr::glimpse()
+head(iso500_data)
 
-# Following code will download all available data.
-dt <- get_iso500(2018, all = TRUE)
-
-dt %>% 
-  dplyr::glimpse()
 
 ```
 

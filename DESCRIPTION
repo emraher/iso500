@@ -1,6 +1,6 @@
 Package: iso500
 Title: Download data from iso500.org.tr
-Version: 0.0.0.9000
+Version: 0.0.1
 Authors@R: 
     person(given = "Emrah",
            family = "Er",
@@ -17,10 +17,11 @@ Imports:
     readxl,
     rlang (>= 0.1.2),
     rvest,
-    stringr
+    stringr,
+    httr
 Suggests: 
     covr,
     roxygen2
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.1.1
+RoxygenNote: 7.2.3

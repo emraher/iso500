@@ -4,12 +4,10 @@
 \alias{get_iso500}
 \title{Get Data from iso500.org.tr}
 \usage{
-get_iso500(year, all = FALSE)
+get_iso500(year)
 }
 \arguments{
 \item{year}{Year}
-
-\item{all}{Download all data, default is FALSE}
 }
 \value{
 A data tibble

@@ -39,15 +39,12 @@ remotes::install_github("emraher/iso500")
 There's only one function in the package, `get_iso500(year)`. You can use this function to download data.
 
 ```{r example}
-library(magrittr)
 library(iso500)
 
 # Following code will download 2018 data.
 iso500_data <- get_iso500(2018)
 
 head(iso500_data)
-
-
 ```
 
 

@@ -28,7 +28,6 @@ There’s only one function in the package, `get_iso500(year)`. You can
 use this function to download data.
 
 ``` r
-library(magrittr)
 library(iso500)
 
 # Following code will download 2018 data.
